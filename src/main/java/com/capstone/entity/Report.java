@@ -29,6 +29,7 @@ public class Report {
 	private String HELP;
 	private String DETAILDESCRIPTION;
 	private Integer COMBINE_PDF_REPORT;
+	
 	public Integer getREPORTID() {
 		return REPORTID;
 	}

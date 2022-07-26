@@ -5,48 +5,48 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.capstone.entity.Employee;
+import com.capstone.entity.Report;
 import com.capstone.util.MyBatisUtil;
 
 
 @Repository
-public class EmployeeMapper {
+public class ReportMapper {
 	
-	public void saveEmployee(Employee employee){
+	public void saveReport(Report report){
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		session.insert("insertEmployee", employee);
+		session.insert("insertReport", report);
 		session.commit();
 		session.close();
 	}
 	
-	public void updateEmployee(Employee employee){
+	public void updateReport(Report report){
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		session.update("updateEmployee", employee);
+		session.update("updateReport", report);
 		session.commit();
 		session.close();
 	}
 	
-	public void deleteEmployee(int employeeId){
+	public void deleteReport(int reportId){
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		session.delete("deleteEmployee", employeeId);
+		session.delete("deleteReports", reportId);
 		session.commit();
 		session.close();
 	}
 	
-	public List<Employee> getAllEmployees(){
+	public List<Report> getAllReports(){
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
 		@SuppressWarnings("unchecked")
-		List<Employee> employeesList = session.selectList("getAllEmployees");
+		List<Report> reportsList = session.selectList("getAllReports");
 		session.commit();
 		session.close();
-		return employeesList;
+		return reportsList;
 	}
 	
-	public Employee findById(int employeeId){
+	public Report findById(int REPORTID){
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		Employee employee = (Employee) session.selectOne("findById", employeeId);
+		Report report = (Report) session.selectOne("findById", REPORTID);
 		session.commit();
 		session.close();
-		return employee;
+		return report;
 	}
 }

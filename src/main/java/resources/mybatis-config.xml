@@ -4,20 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-     <typeAlias type="in.bushansirgur.entity.Employee" alias="employee"/>
+     <typeAlias type="com.capstone.entity.Report" alias="report"/>
   </typeAliases>  
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost/employeedirectory"/>
+        <property name="url" value="jdbc:mysql://localhost/wrpadmin"/>
         <property name="username" value="root"/>
         <property name="password" value="SQLarmyken1!"/>
       </dataSource>
     </environment>
   </environments>
   <mappers>
-    <mapper resource="in/bushansirgur/dao/EmployeeMapper.xml" />
+    <mapper resource="come/capstone/dao/ReportMapper.xml" />
   </mappers>
 </configuration>
